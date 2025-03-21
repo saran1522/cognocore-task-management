@@ -7,10 +7,10 @@ export default function TaskProvider({ children }) {
   const [theme, setTheme] = useState("light");
   const [query, setQuery] = useState("");
   const [addTaskModal, setAddTaskModal] = useState(false);
-  const [allTasks, setAllTasks] = useState([]);
+  const [allTasks, setAllTasks] = useState(null);
   const displayTasks =
     allTasks &&
-    allTasks.length > 0 &&
+    allTasks?.length > 0 &&
     allTasks.filter((task) =>
       task.title.toLowerCase().includes(query.toLowerCase())
     );
@@ -26,15 +26,15 @@ export default function TaskProvider({ children }) {
 
   const handleAddNewTask = async (newTask) => {
     const tasks = await addTask(newTask);
-    setAllTasks(tasks.data);
+    setAllTasks(tasks?.data);
   };
   const handleUpdateTask = async (task, taskId) => {
     const tasks = await updateTask(task, taskId);
-    setAllTasks(tasks.data);
+    setAllTasks(tasks?.data);
   };
   const handleDeleteTask = async (taskId) => {
     const tasks = await deleteTask(taskId);
-    setAllTasks(tasks.data);
+    setAllTasks(tasks?.data);
   };
 
   useEffect(() => {
@@ -48,6 +48,7 @@ export default function TaskProvider({ children }) {
   return (
     <TaskContext.Provider
       value={{
+        allTasks,
         displayTasks,
         query,
         theme,
