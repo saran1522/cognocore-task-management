@@ -4,6 +4,8 @@ import Board from "./components/Board";
 import { useTask } from "./Providers/TaskProvider";
 import AddButton from "./components/AddButton";
 import AddTaskModal from "./components/AddTaskModal";
+import Search from "./components/Search";
+import { PiHandSwipeLeftLight } from "react-icons/pi";
 
 function App() {
   const { allTasks, theme, addTaskModal } = useTask();
@@ -24,7 +26,15 @@ function App() {
         </div>
       ) : (
         <>
-          <AddButton />
+          <div className="w-full flex items-center justify-between gap-4 mt-5 px-2">
+            <div className="md:hidden">
+              <Search />
+            </div>
+            <AddButton />
+          </div>
+          <span className="w-full flex items-center justify-end gap-2 px-4 pt-4 text-gray-500 lg:hidden">
+            swipe left <PiHandSwipeLeftLight />
+          </span>
           <Board />
           {addTaskModal && <AddTaskModal />}
         </>

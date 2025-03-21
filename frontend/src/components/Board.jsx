@@ -19,7 +19,7 @@ function Board() {
   const done = displayTasks.filter((task) => task.status === "done");
 
   return (
-    <div className="flex flex-1 gap-8 p-8">
+    <div className="flex flex-1 gap-8 p-8 max-md:p-4 overflow-x-scroll">
       <TaskContainer Status="To Do" tasks={todo} />
       <TaskContainer Status="In Progress" tasks={inprogress} />
       <TaskContainer Status="Done" tasks={done} />

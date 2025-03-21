@@ -42,7 +42,7 @@ function AddTaskModal({ task, setShow }) {
   };
   return (
     <div className="fixed top-0 left-0 h-screen w-screen bg-[#e5e5e5d0] dark:bg-[#17161bcc] flex items-center justify-center">
-      <div className="p-6 flex flex-col gap-4 rounded-xl bg-white dark:bg-[#060610] min-w-[500px]">
+      <div className="p-6 flex flex-col gap-4 rounded-xl bg-white dark:bg-[#060610] lg:min-w-[500px]">
         <div className="flex justify-between items-center">
           <h3 className="text-lg font-semibold">Add A New Task</h3>
           <IoClose

@@ -3,7 +3,7 @@ import Task from "./Task";
 
 function TaskContainer({ Status, tasks }) {
   return (
-    <section className="flex-1 flex flex-col gap-4">
+    <section className="flex-1 flex flex-col gap-4 max-md:min-w-full">
       <h3
         className={`py-1 px-2 rounded-md w-fit font-semibold dark:text-gray-800 ${
           Status === "To Do"

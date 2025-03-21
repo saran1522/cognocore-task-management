@@ -12,7 +12,7 @@ function Task({ task }) {
       <div
         className={`bg-white flex flex-col gap-4 shadow-lg rounded-lg p-3 w-full text-slate-500 text-sm dark:bg-[#060610]`}
       >
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-start">
           <h4 className="text-lg font-medium text-gray-800 dark:text-gray-100">
             {task.title}
           </h4>
